@@ -5,7 +5,9 @@ A simple script that can be used with postgres and repmgr to create a simple two
 sudo ./install.sh
 
 You need run the install script on both nodes.
+
 During the installation you need to configure the following parameters:
+
 node_vip            # The virtual IP of the primary node (used to connect to postgres database)
 
 node_netmask        # network mask for virtual IP
