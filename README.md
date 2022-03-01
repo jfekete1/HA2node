@@ -2,7 +2,7 @@
 A simple script that can be used with postgres and repmgr to create a simple two node HA solution. This script makes it possible to to auto assign a VIP address to the primary node, even after an automatic failover occurs, thus ensuring basic HA requirements.
 
 
-# To install
+# Installation
 sudo ./install.sh
 
 
@@ -23,4 +23,5 @@ other_node_id       # This is the node_id parameter of the other node, you can c
 other_node_ip       # The IP address of the other node
 
 
+# Afterwards
 After the installation you can configure your application to connect to the database via the VIP address.
