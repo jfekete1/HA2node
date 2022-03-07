@@ -53,6 +53,7 @@ cat <<EOT >> ./HA2postgres
 EOT
 
 mv ./HA2postgres /etc/cron.d/
+chcon -t system_cron_spool_t /etc/cron.d/HA2postgres
 
 echo
 echo "Successfully installed HA2node!"
