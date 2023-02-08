@@ -60,7 +60,7 @@ sub logMessage {
 }
 
 ##################################################
-# HA STANDBY-RA KELL VALTANOM FAIL MIATT
+# IF NODE FAILURE OCCURS CHANGE TO STANDBY
 ##################################################
 my $result=`su -c '/usr/pgsql-13/bin/repmgr -f /etc/repmgr/13/repmgr.conf cluster show 2>&1' postgres`;
 if ($result =~ /node \"$other_node_name\" \(ID\: $other_node_id\) is registered as standby but running as primary/){
@@ -97,7 +97,7 @@ if ($result =~ /node \"$other_node_name\" \(ID\: $other_node_id\) is registered 
 
 
 ##################################################
-# HA NINCS VIP, VAGY VAN DE NEM KELLENE
+# IF VIP ADDRESS IS MISSING, OR IS ON WRONG NODE
 ##################################################
 my $timetocheck = strftime "%Y.%m.%d %H:%M:", localtime(time-60);
 $result = `tail /var/log/repmgr/repmgrd.log | grep "$timetocheck"`;
